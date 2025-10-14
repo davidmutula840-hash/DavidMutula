@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Dadris Designers</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script defer>
+    // ===== HAMBURGER MENU =====
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    // ===== ANIMATE SKILL BARS ON SCROLL =====
+    document.addEventListener('DOMContentLoaded', () => {
+      const bars = document.querySelectorAll('.bar-fill');
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const bar = entry.target;
+            const percent = getComputedStyle(bar).getPropertyValue('--percent').trim();
+            const value = percent.endsWith('%') ? percent : (percent + '%');
+            bar.style.width = value;
+            obs.unobserve(bar); // animate once
+          }
+        });
+      }, { threshold: 0.4 });
+
+      bars.forEach(b => {
+        b.style.width = '0';
+        observer.observe(b);
+      });
+    });
+  </script>
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <h2 class="logo">Dadris <span>Designers</span></h2>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero about-hero">
+    <div class="hero-content">
+      <h1>About <span>David Mutula</span></h1>
+      <p>Creative Designer & Web Developer at Dadris Designers</p>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section class="container about-section">
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="assets/images/david.jpg" alt="David Mutula">
+      </div>
+      <div class="about-text">
+        <h2>Who I Am</h2>
+        <p>My name is <strong>David Mutula</strong>, a passionate creative and web developer under the brand <strong>Dadris Designers</strong>. I specialize in helping individuals, businesses, and organizations bring their ideas to life through clean design and modern technology. My work blends creativity and functionality to deliver designs that speak louder than words.</p>
+        <p>For me, design is not just a skill — it’s a language that communicates values, emotions, and purpose. Whether it’s a website, logo, poster, or social media banner, I aim to ensure that every project I touch carries quality, personality, and clarity.</p>
+        <a href="services.html" class="btn-primary">Explore My Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section class="container skills-section">
+    <h2>What I Do Best</h2>
+    <p class="center-text">Over the years, I’ve developed expertise across various creative and technical disciplines that help me serve my clients better.</p>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h4>🎨 Graphic Design</h4>
+        <p>Creating visually appealing designs for brands, campaigns, and digital platforms using Adobe Photoshop, Illustrator, and CorelDRAW.</p>
+      </div>
+      <div class="skill-card">
+        <h4>💻 Web Development</h4>
+        <p>Building fast, responsive, and SEO-optimized websites using HTML, CSS, JavaScript, and WordPress — ensuring they look perfect on any device.</p>
+      </div>
+      <div class="skill-card">
+        <h4>📸 Photo Editing</h4>
+        <p>Retouching and enhancing photos to achieve a professional and clean look for marketing materials, personal portraits, and event visuals.</p>
+      </div>
+      <div class="skill-card">
+        <h4>🖨️ Printing & Branding</h4>
+        <p>Designing and preparing materials for both digital and physical branding — from banners to business cards and promotional items.</p>
+      </div>
+    </div>
+
+    <!-- ===== SKILL LEVELS ===== -->
+    <div class="skill-bars">
+      <h3>My Skill Levels</h3>
+
+      <div class="bar">
+        <div class="bar-info">
+          <span>Graphic Design</span>
+          <span>95%</span>
+        </div>
+        <div class="bar-bg">
+          <div class="bar-fill" style="--percent: 95%;"></div>
+        </div>
+      </div>
+
+      <div class="bar">
+        <div class="bar-info">
+          <span>Web Development</span>
+          <span>90%</span>
+        </div>
+        <div class="bar-bg">
+          <div class="bar-fill" style="--percent: 90%;"></div>
+        </div>
+      </div>
+
+      <div class="bar">
+        <div class="bar-info">
+          <span>Photo Editing</span>
+          <span>85%</span>
+        </div>
+        <div class="bar-bg">
+          <div class="bar-fill" style="--percent: 85%;"></div>
+        </div>
+      </div>
+
+      <div class="bar">
+        <div class="bar-info">
+          <span>Printing & Branding</span>
+          <span>80%</span>
+        </div>
+        <div class="bar-bg">
+          <div class="bar-fill" style="--percent: 80%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE SECTION ===== -->
+  <section class="container experience-section">
+    <h2>My Experience</h2>
+    <div class="experience-content">
+      <p>I have worked with individuals, start-ups, and schools to develop creative solutions that strengthen their identity and improve their visual communication. Each project taught me to value collaboration, attention to detail, and delivering results that exceed expectations.</p>
+      <p>As a self-driven creative, I continuously learn new technologies and design trends to stay updated in this ever-changing digital world. Whether it’s building a website or designing an advertising campaign, I always aim for excellence.</p>
+    </div>
+  </section>
+
+  <!-- ===== MISSION SECTION ===== -->
+  <section class="mission-section">
+    <div class="container">
+      <h2>My Mission</h2>
+      <p>My mission is to help brands and individuals express their ideas clearly and professionally through modern, creative, and functional design. I believe that every project — no matter how small — deserves focus, strategy, and passion.</p>
+      <p class="highlight">Design isn’t just about looking good — it’s about telling stories that inspire action.</p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>&copy; 2025 Dadris Designers. All Rights Reserved.</p>
+    <div class="footer-links">
+      <a href="tel:0745365756">Call: 0745365756</a> |
+      <a href="https://wa.me/254745365756">WhatsApp</a>
+    </div>
+  </footer>
+</body>
+</html>

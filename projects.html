@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - David Mutula | Dadris Designers</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ---------- GENERAL STYLES ---------- */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #333;
+    }
+
+    header {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+    }
+
+    nav .logo {
+      font-weight: bold;
+      color: orange;
+      font-size: 1.3rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: orange;
+    }
+
+    /* Hamburger Menu */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: #333;
+      border-radius: 3px;
+      transition: all 0.3s;
+    }
+
+    /* ---------- HERO SECTION ---------- */
+    .hero {
+      text-align: center;
+      padding: 60px 20px 30px;
+      background-color: #fff;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    .hero p {
+      color: #555;
+      font-size: 1.1rem;
+    }
+
+    /* ---------- PROJECTS GRID ---------- */
+    .projects-section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-card-content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .project-card-content h3 {
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    .project-card-content p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .project-card-content a {
+      display: inline-block;
+      background-color: orange;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+
+    .project-card-content a:hover {
+      background-color: #007BFF;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 50px;
+    }
+
+    /* ---------- RESPONSIVE NAV ---------- */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 65px;
+        right: 20px;
+        width: 200px;
+        padding: 20px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        border-radius: 10px;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* ---------- SCROLL ANIMATION ---------- */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">Dadris Designers</div>
+
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>My Projects</h1>
+    <p>Here is a collection of my recent web and design works</p>
+  </section>
+
+  <section class="projects-section">
+    <div class="project-card fade-in">
+      <img src="assets/images/brimu-electricals.jpg" alt="Brimu Electricals Website">
+      <div class="project-card-content">
+        <h3>Brimu Electricals Website</h3>
+        <p>Corporate website for Brimu Electricals showcasing their services and contact info.</p>
+        <a href="https://brimuelectricals.wuaze.com" target="_blank">View Project</a>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <img src="assets/images/academy-landing.jpg" alt="Dadris Designers Academy">
+      <div class="project-card-content">
+        <h3>Dadris Designers Academy</h3>
+        <p>Landing page for Dadris Designers Academy to attract students and showcase courses.</p>
+        <a href="https://davidmutula840-hash.github.io/Dadris-Academy-/" target="_blank">View Project</a>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <img src="assets/images/dadris-portfolio.jpg" alt="Dadris Portfolio">
+      <div class="project-card-content">
+        <h3>Dadris Designers Portfolio</h3>
+        <p>Personal portfolio showing web, print, and branding projects under Dadris Designers.</p>
+        <a href="https://davidmutula840-hash.github.io/davidportfolio/" target="_blank">View Project</a>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <img src="assets/images/dadris-website.jpg" alt="Dadris Website">
+      <div class="project-card-content">
+        <h3>Dadris PA System Website</h3>
+        <p>A responsive website promoting Dadris PA System’s event sound solutions.</p>
+        <a href="https://davidmutula840-hash.github.io/dadrissystem.com/" target="_blank">View Project</a>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <img src="assets/images/gallery2.jpg" alt="Branding Mockup">
+      <div class="project-card-content">
+        <h3>Branding Mockup Design</h3>
+        <p>Logo and print identity visualization for a creative brand concept.</p>
+        <a href="#" target="_blank">View Project</a>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <img src="assets/images/poster-design.jpg" alt="Poster Design Project">
+      <div class="project-card-content">
+        <h3>Poster Design Project</h3>
+        <p>Creative poster showing layout balance and typographic design skill.</p>
+        <a href="#" target="_blank">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 David Mutula | Dadris Designers</p>
+  </footer>
+
+  <script>
+    // Fade-in animation on scroll
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+    fadeEls.forEach(el => observer.observe(el));
+
+    // Hamburger toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>
