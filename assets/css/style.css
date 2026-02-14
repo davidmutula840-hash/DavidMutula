@@ -54,7 +54,7 @@ body {
 /* ===== HERO ===== */
 .hero {
   height: 80vh;
-  background: url('../images/hero-bg.jpg') center/cover no-repeat;
+  background: url('../images/hero-bg.jpeg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -562,5 +562,6 @@ p {
     padding: 25px 15px;
   }
 }
+
 
 
